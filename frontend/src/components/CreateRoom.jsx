@@ -24,7 +24,7 @@ const LiveLocationMap = () => {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    const newSocket = io('http://localhost:5000');
+    const newSocket = io('https://tracking-m78q.onrender.com');
     setSocket(newSocket);
 
     newSocket.on('roomData', (data) => {
@@ -41,7 +41,7 @@ const LiveLocationMap = () => {
 
   const calculateRoute = async (startCoords, endCoords) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/directions', {
+      const response = await axios.post('https://tracking-m78q.onrender.com/api/directions', {
         coordinates: [
           [startCoords.lng, startCoords.lat],
           [endCoords.lng, endCoords.lat],
