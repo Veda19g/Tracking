@@ -8,12 +8,12 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const app = express();
-app.use(cors({ origin: 'http://localhost:5173' || '*' }));
+app.use(cors({ origin: 'https://tracking-blush.vercel.app' || '*' }));
 app.use(express.json()); // Parse JSON request bodies
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:5173' || '*',
+    origin: 'https://tracking-blush.vercel.app' || '*',
     methods: ['GET', 'POST']
   },
 });
